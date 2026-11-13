@@ -36,13 +36,8 @@ class AppUpdateChecker(
     }
 }
 
-val GITHUB_REPO: String by lazy {
-    if (isNightlyBuildType) {
-        "mihonapp/mihon-preview"
-    } else {
-        "mihonapp/mihon"
-    }
-}
+// Upstream releases lack the protected folder, so updates are only ever offered from this fork
+const val GITHUB_REPO = "Siddharth-afk/mihon-private-lib"
 
 val RELEASE_TAG: String by lazy {
     if (isNightlyBuildType) {
